@@ -6,15 +6,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="dist/custom.css" />
+
   </head>
-  <body class="bg-gradient-to-b from-white to-AbuKu h-screen ">
+  <body class="bg-gradient-to-b from-white to-AbuKu h-screen">
+    <header>
     <nav class="my-10 w-auto h-auto">
       <div class="text-center p-10">
       <p class="text-4xl font-body font-bold ">Let's Play</p>
       <p class="text-xl font-semibold font-title italic">Truth Or Dare</p>
       </div>
     </nav>
-    <div class="flex justify-center items-center gap-x-10">
+  </header>
+
+  <main class="flex justify-center items-center gap-x-10">
     <div class="card w-[135px] h-[192px] bg-transparent " id="buttonTruth">
       <div>
         <div class="card-front ">
@@ -25,7 +29,7 @@
         </div>
 
       <div class="card-back w-full h-full">
-        <img src="https://i.ibb.co/fMTqr8k/Truth.png" alt="Truth" border="0">
+        <img src="dist/img/Truth.png" alt="Truth" border="0">
       </div>
     </div>
     </div>
@@ -40,12 +44,38 @@
         </div>
 
       <div class="card-back w-full h-full">
-        <img src="https://i.ibb.co/8Y1Ym2h/Dare.png" alt="Dare" border="0">
+        <img src="dist/img/Dare.png" alt="Dare" border="0">
       </div>
     </div>
     </div>
+  </main>
+  
 
-  </div>
+<footer class="font-body fixed bottom-0 items-center rounded-lg shadow w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-black sm:text-center">© 2023 <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="hover:underline">Oikiac™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-black dark:text-black sm:mt-0">
+        <li>
+          <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="mr-4 hover:underline md:mr-6">Creator :</a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/baapw_/" class="mr-4 hover:underline md:mr-6"><span>|</span> baapw <span>|</span></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ukaaptr/" class="mr-4 hover:underline md:mr-6"><span>|</span> ukaaptr <span>|</span></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/raihnkhalid/" class="mr-4 hover:underline md:mr-6"><span>|</span> raihnkhalid <span>|</span></a>
+    </li>
+        <li>
+            <a href="mailto:oikiacgames@gmail.com" class="hover:underline">Mail</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+
     <script src="dist/script.js"></script>
   </body>
 </html>

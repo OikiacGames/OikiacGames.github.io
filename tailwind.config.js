@@ -12,7 +12,7 @@ const Myclass = plugin(function ({ addUtilities }) {
 });
 
 module.exports = {
-  content: ["./dist/*.{html,js}"],
+  content: ["./*.html", "./dist/*.js"],
   theme: {
     extend: {
       backgroundImage: {
