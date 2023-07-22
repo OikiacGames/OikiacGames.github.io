@@ -8,54 +8,58 @@
     <link rel="stylesheet" href="dist/custom.css" />
 
   </head>
-  <body class="bg-gradient-to-b from-white to-AbuKu h-screen">
+  <body class="bg-gradient-to-br from-Pinkku via-Unguku to-Cyan h-screen">
+    <!--Navbar-->
     <header>
-    <nav class="my-10 w-auto h-auto">
+    <nav class="w-auto h-auto">
       <div class="text-center p-10">
-      <p class="text-4xl font-body font-bold ">Let's Play</p>
-      <p class="text-xl font-semibold font-title italic">Truth Or Dare</p>
+      <p class="text-5xl font-bold font-title"> <span class="text-transparent bg-clip-text bg-gradient-to-r from-Cyan from-30% via-violet-600 from-20% to-Pinkku from-20%">Let's Play</span></p>
+      <p class="text-xl font-semibold font-title italic text-slate-50"><span class="text-Cyan">Truth</span> Or <span class="text-Pinkku">Dare</span></p>
+      <p class="font-semibold text-slate-50"><span class="text-violet-600">Play it</span> With Your <span class=" text-violet-600">Circle</span> </p>
       </div>
     </nav>
   </header>
 
-  <main class="flex justify-center items-center gap-x-10">
-    <div class="card w-[135px] h-[192px] bg-transparent " id="buttonTruth">
+  <main class="flex justify-center items-center gap-x-10 mt-32">
+    <!--Truth Card-->
+    <div class="card w-[135px] h-[192px] bg-transparent" id="buttonTruth">
       <div>
         <div class="card-front ">
-          <div class="card-content flex flex-col text-center justify-center h-full w-full text-black  bg-BackFace">
+          <div class="card-content flex flex-col text-center justify-center h-full w-full text-slate-50 bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg shadow-neon drop-shadow-2xl">
             <p class="text-lg font-semibold font-title ">Truth</p>
-            <p class="text-sm font-body px-1" id="truth">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil velit molestiae optio.</p>
+            <p class="text-sm px-1" id="truth">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil velit molestiae optio.</p>
           </div>
         </div>
-
-      <div class="card-back w-full h-full">
-        <img src="dist/img/Truth.png" alt="Truth" border="0">
+      <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg shadow-neon drop-shadow-2xl">
+        <h1 class=" font-title text-xl font-bold text-slate-50 mt-3">Truth</h1>
+        <img class="mx-auto h-28 w-28 me-4 mt-2" src="dist/img/TLogo.png" alt="">
       </div>
     </div>
     </div>
 
-    <div class="card w-[135px] h-[192px] bg-transparent " id="buttonDare">
+    <!--Truth Card-->
+    <div class="card w-[135px] h-[192px] bg-transparent" id="buttonDare">
       <div>
-        <div class="card-front">
-          <div class="card-content flex flex-col text-center justify-center h-full w-full text-black bg-BackFace">
-            <p class="text-lg font-semibold font-title">Dare</p>
-            <p class="text-sm font-body px-1" id="dare">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat iure expedita veritatis?</p>
+        <div class="card-front ">
+          <div class="card-content flex flex-col text-center justify-center h-full w-full text-slate-50 bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg shadow-neon drop-shadow-2xl">
+            <p class="text-lg font-semibold font-title ">Dare</p>
+            <p class="text-sm px-1" id="dare">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil velit molestiae optio.</p>
           </div>
         </div>
-
-      <div class="card-back w-full h-full">
-        <img src="dist/img/Dare.png" alt="Dare" border="0">
+      <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-lg shadow-neon drop-shadow-2xl">
+        <h1 class=" font-title text-xl font-bold text-slate-50 mt-3">Dare</h1>
+        <img class="mx-auto h-24 w-24 me-4 mt-3" src="dist/img/DLogo.png" alt="">
       </div>
     </div>
     </div>
   </main>
   
-
-<footer class="font-body fixed bottom-0 items-center rounded-lg shadow w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between">
+<!--Footer-->
+<footer class="fixed bottom-0 items-center w-full md:flex md:items-center md:justify-between">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-black sm:text-center">© 2023 <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="hover:underline">Oikiac™</a>. All Rights Reserved.
+      <span class="text-sm text-slate-50 sm:text-center">© 2023 <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="hover:underline">Oikiac™</a>. All Rights Reserved.
     </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-black dark:text-black sm:mt-0">
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-slate-100 dark:text-slate-50 sm:mt-0">
         <li>
           <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="mr-4 hover:underline md:mr-6">Creator :</a>
         </li>

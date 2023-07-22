@@ -15,17 +15,18 @@ module.exports = {
   content: ["./*.html", "./dist/*.js"],
   theme: {
     extend: {
-      backgroundImage: {
-        'BackFace': "url('img/Backface.png')",
-      },
       colors: {
-        'PurpleKu': '#8100BE',
-        'AbuKu': '#5E6F83',
+        'Pinkku': '#D16BA5',
+        'Unguku': '#86A8E7',
+        'Cyan': '#5FFBF1',
       },
       fontFamily: {
         body: ['Monomaniac One'],
         title: ['Molle'],
-      }
+      },
+      boxShadow: {
+        neon: "0 0 5px theme('colors.violet.200'), 0 0 20px theme('colors.violet.500')"
+      },
     },
   },
   plugins: [Myclass],
