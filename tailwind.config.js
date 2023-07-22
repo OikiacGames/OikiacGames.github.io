@@ -25,7 +25,7 @@ module.exports = {
         title: ['Molle'],
       },
       boxShadow: {
-        neon: "0 0 5px theme('colors.violet.200'), 0 0 20px theme('colors.violet.500')"
+        neon: "0 0 5px theme('colors.violet.500'), 0 0 10px theme('colors.slate.50')"
       },
     },
   },
