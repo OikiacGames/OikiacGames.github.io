@@ -1,85 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Truth OR Dare!</title>
-    <link rel="stylesheet" href="dist/output.css" />
-    <link rel="stylesheet" href="dist/custom.css" />
 
-  </head>
-  <body class="bg-gradient-to-br from-Pinkku via-Unguku to-Cyan h-screen">
-    <!--Navbar-->
-    <header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truth OR Dare!</title>
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="dist/custom.css" />
+</head>
+
+<body class="bg-gradient-to-br from-Pinkku via-Unguku to-Cyan h-screen">
+  <!--Navbar-->
+  <header>
     <nav class="w-auto h-auto">
       <div class="text-center p-10">
-      <p class="text-5xl font-bold font-title text-white"><span class="text-Cyan">Let</span><span class="text-violet-600">'s</span> <span class="text-Pinkku">Play</span></p>
-      <p class="text-xl font-semibold font-title italic text-slate-50"><span class="text-Cyan">Truth</span> Or <span class="text-Pinkku">Dare</span></p>
-      <p class="font-semibold text-slate-50"><span class="text-violet-600">Play it</span> With Your <span class=" text-violet-600">Circle</span> </p>
+        <p class="text-5xl font-bold font-title text-white"><span class="text-sky-300">Let</span><span
+            class="text-violet-600">'s</span> <span class="text-pink-500">Play</span></p>
+        <p class="text-xl font-semibold font-title italic text-slate-50"><span class="text-sky-300">Truth</span> Or <span
+            class="text-pink-500">Dare</span></p>
+        <p class="font-semibold text-slate-50"><span class="text-violet-600">Play it</span> With Your <span
+            class=" text-violet-600">Circle</span> </p>
       </div>
     </nav>
   </header>
 
   <main class="flex justify-center items-center gap-x-10 mt-32">
     <!--Truth Card-->
-    <div class="card w-[135px] h-[192px] bg-transparent" id="buttonTruth">
+    <div class="card w-[135px] h-[192px] bg-transparent" id="cardTruth">
       <div>
-        <div class="card-front ">
-          <div class="card-content flex flex-col text-center justify-center h-full w-full text-slate-50 bg-white/5 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
-            <p class="text-lg font-semibold font-title ">Truth</p>
-            <p class="text-sm px-1" id="truth">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil velit molestiae optio.</p>
-          </div>
+        <div class="card-front text-center items-center w-full h-full text-slate-50 bg-white/5 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
+          <h1 class="font-title text-xl font-bold text-slate-50 mt-2">Truth</h1>
+          <p class="text-sm mt-2" id="truth"></p>
         </div>
-      <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
-        <h1 class=" font-title text-xl font-bold text-slate-50 mt-3">Truth</h1>
-        <img class="mx-auto h-28 w-28 me-4 mt-2" src="dist/img/TLogo.png" alt="">
+
+        <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
+          <h1 class=" font-title text-xl font-bold text-slate-50 mt-2">Truth</h1>
+          <img class="ms-2 h-28 w-28 mt-3" src="dist/img/TLogo.png" alt="">
+        </div>
       </div>
-    </div>
     </div>
 
-    <!--Truth Card-->
-    <div class="card w-[135px] h-[192px] bg-transparent" id="buttonDare">
+    <!--Dare Card-->
+    <div class="card w-[135px] h-[192px] bg-transparent" id="cardDare">
       <div>
-        <div class="card-front ">
-          <div class="card-content flex flex-col text-center justify-center h-full w-full text-slate-50 bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
-            <p class="text-lg font-semibold font-title ">Dare</p>
-            <p class="text-sm px-1" id="dare">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil velit molestiae optio.</p>
+          <div class="card-front text-center items-center h-full w-full text-slate-50 bg-white/5 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
+            <p class="font-title text-xl font-bold text-slate-50 mt-2 ">Dare</p>
+            <p class="text-sm mt-2" id="dare"></p>
           </div>
+        
+        <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
+          <h1 class=" font-title text-xl font-bold text-slate-50 mt-2">Dare</h1>
+          <img class="mx-auto h-24 w-24 mt-5" src="dist/img/DLogo.png" alt="">
         </div>
-      <div class="card-back text-center items-center w-full h-full bg-white/10 z-10 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm shadow-neon drop-shadow-2xl">
-        <h1 class=" font-title text-xl font-bold text-slate-50 mt-3">Dare</h1>
-        <img class="mx-auto h-24 w-24 me-4 mt-3" src="dist/img/DLogo.png" alt="">
       </div>
-    </div>
     </div>
   </main>
-  
-<!--Footer-->
-<footer class="fixed bottom-0 items-center w-full md:flex md:items-center md:justify-between">
+  <!--Footer-->
+  <footer class="fixed bottom-0 items-center w-full md:flex md:items-center md:justify-between">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-slate-50 sm:text-center">© 2023 <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="hover:underline">Oikiac™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-slate-100 dark:text-slate-50 sm:mt-0">
+      <span class="text-sm text-slate-50 sm:text-center">© 2023 <a
+          href="https://github.com/OikiacGames/OikiacGames.github.io" class="hover:underline">Oikiac™</a>. All Rights
+        Reserved.
+      </span>
+      <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-slate-100 dark:text-slate-50 sm:mt-0">
         <li>
-          <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="mr-4 hover:underline md:mr-6">Creator :</a>
+          <a href="https://github.com/OikiacGames/OikiacGames.github.io" class="mr-4 hover:underline md:mr-6">Creator
+            :</a>
         </li>
         <li>
-            <a href="https://www.instagram.com/baapw_/" class="mr-4 hover:underline md:mr-6"><span>|</span> baapw <span>|</span></a>
+          <a href="https://www.instagram.com/baapw_/" class="mr-4 hover:underline md:mr-6"><span>|</span> baapw
+            <span>|</span></a>
         </li>
         <li>
-          <a href="https://www.instagram.com/ukaaptr/" class="mr-4 hover:underline md:mr-6"><span>|</span> ukaaptr <span>|</span></a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/raihnkhalid/" class="mr-4 hover:underline md:mr-6"><span>|</span> raihnkhalid <span>|</span></a>
-    </li>
-        <li>
-            <a href="mailto:oikiacgames@gmail.com" class="hover:underline">Contact</a>
+          <a href="https://www.instagram.com/ukaaptr/" class="mr-4 hover:underline md:mr-6"><span>|</span> ukaaptr
+            <span>|</span></a>
         </li>
-    </ul>
+        <li>
+          <a href="https://www.instagram.com/raihnkhalid/" class="mr-4 hover:underline md:mr-6"><span>|</span>
+            raihnkhalid <span>|</span></a>
+        </li>
+        <li>
+          <a href="mailto:oikiacgames@gmail.com" class="hover:underline">Contact</a>
+        </li>
+      </ul>
     </div>
-</footer>
+  </footer>
 
 
-    <script src="dist/script.js"></script>
-  </body>
+  <script src="dist/script.js"></script>
+</body>
+
 </html>

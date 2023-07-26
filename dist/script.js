@@ -2,20 +2,20 @@ const truthText = document.querySelector("#truth");
 const dareText = document.querySelector("#dare");
 
 
-var truths = ['Apa hal teraneh yang pernah kamu lakukan saat berada di tempat umum?',
+let truths = ['Apa hal teraneh yang pernah kamu lakukan saat berada di tempat umum?',
               'Apa hal paling memalukan yang pernah terjadi padamu di sekolah?',
               'Jika kamu bisa menukar hidupmu dengan satu orang di dunia ini, siapa yang akan kamu pilih dan mengapa?',
               'Apa hal tergila yang pernah kamu lakukan demi mencuri perhatian seseorang yang kamu suka?',
               'Jika kamu bisa memiliki kekuatan super, apa yang ingin kamu miliki dan bagaimana kamu akan menggunakannya?',
               'Ceritakan pengalaman terburukmu saat kencan pertama!',
-              'Apa hal paling menjengkelkan yang pernah kamu lakukan kepada saudara atau temanmu?',
-              'Jika kamu terjebak di pulau terpencil selama sebulan dan hanya boleh membawa tiga hal, apa yang akan kamu bawa dan mengapa?',
+              'Hal paling menjengkelkan yang pernah kamu lakukan kepada saudara atau temanmu?',
+              'Barang yang akan kamu bawa, jika terjebak disebuah pulau selama 1 bulan, dan kenapa barang barang itu (3)',
               'Ceritakan tentang kebohongan terbesar yang pernah kamu ceritakan kepada orang lain!',
               'Apa hal paling aneh atau mengerikan yang pernah kamu lihat di dalam mimpi?',
               'Siapa orang yang kamu sukai diam diam sekarang?',
               'Adakah orang yang menarik, tampan atau cantik yang kamu kagumi saat ini?',
               'Siapa orang yang terakhir kamu stalk di sosmed?',
-              'Apakah kamu merasa insecure, jika iya hal hal apa saja yang membuatmu insecure kepada diri sendiri atau orang lain?',
+              'Hal apa saja yang membuatmu insecure kepada diri sendiri atau orang lain?',
               'Bagaimana kesan pertama saat bertemu teman sebelahmu (Kanan, Kiri)',
               'Apa tontonan favoritmu saat kecil?',
               'Apakah kamu pernah ngeghosting cewe/cowo?',
@@ -33,8 +33,8 @@ var truths = ['Apa hal teraneh yang pernah kamu lakukan saat berada di tempat um
               'Sebutkan orang yang kamu benci/tidak suka',
             ]; // Array data yang ingin ditampilkan secara acak
 
-var dares = ['Tunjukkan chat terakhir kamu kepada pasangan / gebetan.',
-              'Telepon temanmu secara acak lalu katakan, “ada yang bisa kami bantu?',
+let dares = ['Tunjukkan chat terakhir kamu kepada pasangan / gebetan.',
+              'Telepon temanmu secara acak lalu katakan, "ada yang bisa kami bantu?"',
               'Selfie lalu upload di Instastory kamu dengan gaya paling jelek yang bisa kamu lakukan',
               'Tepuk pundak orang yang lewat secara acak, lalu katakan, “Hai, bro!',
               'Minta foto ke orang yang kamu temui di jalan',
@@ -43,7 +43,7 @@ var dares = ['Tunjukkan chat terakhir kamu kepada pasangan / gebetan.',
               'Tunjukkan history pencarian kamu di media sosial.',
               'Kembali melanjutkan permainan sambil memegang dahi sampai ada orang lain yang kalah atau putaran ke 3',
               'Buat Instastory menggunakan filter yang paling tidak kamu sukai',
-              'Chat orang pertama yang ada di urutan pertama daftar Instastory dengan mengatakan, “Aku tahu rahasiamu selama ini',
+              'Chat orang ke-10 yang ada di daftar Instastory dengan mengatakan, "Aku tau rahasiamu!"',
               'Upload salah satu foto yang paling kamu sukai dari gebetanmu',
               'Jilat sikumu tanpa bantuan dari tangan lainnya',
               'Keluarkan semua isi tas dan dompetmu.',
@@ -65,8 +65,8 @@ var dares = ['Tunjukkan chat terakhir kamu kepada pasangan / gebetan.',
               'Coba berdiri jinjit selama 3 menit.',
           ]; // Array data yang ingin ditampilkan secara acak
 
-var clickCountTruth = 0 ;
-var clickCountDare = 0 ;
+let clickCountTruth = 0 ;
+let clickCountDare = 0 ;
 
 // FUNCTION FLIP CARD
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initCards() {
-    var cards = document.querySelectorAll('.card');
+    let cards = document.querySelectorAll('.card');
     cards.forEach(function(card) {
         card.addEventListener('click', function() {
             this.classList.toggle('flipped');
@@ -90,14 +90,14 @@ function getRandomTruth() {
     clickCountTruth++; // Meningkatkan jumlah klik setiap kali tombol diklik
     
     if (clickCountTruth % 2 !== 0) { // Memeriksa apakah jumlah klik adalah bilangan ganjil
-        var randomIndex = Math.floor(Math.random() * truths.length); // Mendapatkan index acak dari array
-        var randomTruth = truths[randomIndex]; // Mendapatkan data acak dari array berdasarkan index
+        let randomIndex = Math.floor(Math.random() * truths.length); // Mendapatkan index acak dari array
+        let randomTruth = truths[randomIndex]; // Mendapatkan data acak dari array berdasarkan index
         console.log(randomTruth);
         truthText.innerText = randomTruth;
     }
 }
 
-var buttonTruth = document.getElementById("buttonTruth");
+let buttonTruth = document.getElementById("cardTruth");
 buttonTruth.addEventListener("click", getRandomTruth); // Menambahkan event listener pada tombol untuk memanggil fungsi getRandomTruth saat diklik
 
 // FUNCTION DARE
@@ -106,13 +106,13 @@ function getRandomDare() {
     clickCountDare++;
 
     if (clickCountDare % 2 !== 0) {   
-        var randomIndex = Math.floor(Math.random() * dares.length); // Mendapatkan index acak dari array
-        var randomDare = dares[randomIndex]; // Mendapatkan data acak dari array berdasarkan index
+        let randomIndex = Math.floor(Math.random() * dares.length); // Mendapatkan index acak dari array
+        let randomDare = dares[randomIndex]; // Mendapatkan data acak dari array berdasarkan index
         console.log(randomDare);
         dareText.innerText = randomDare;
     }
   
   }
   
-  var buttonDare = document.getElementById("buttonDare");
+  let buttonDare = document.getElementById("cardDare");
   buttonDare.addEventListener("click", getRandomDare); // Menambahkan event listener pada tombol untuk memanggil fungsi getRandomDare saat diklik
