@@ -1,3 +1,119 @@
+
+//  TOD VIEW PRIVATE {{--START--}}
+
+// Fungsi untuk menampilkan game dan menyembunyikan tombol
+function showPrivateGameView() {
+    // Menyembunyikan tombol play
+    let privateButton = document.getElementById('privateButton');
+    privateButton.style.display = 'none';
+
+    // Menyembunyikan tombol about
+    let nav = document.querySelector('nav');
+    nav.style.display = 'none';
+
+    // Menampilkan game
+    let privateGameView = document.getElementById('privateTod');
+    privateGameView.style.display = 'block';
+}
+
+//  TOD VIEW PRIVATE {{--END--}}
+
+
+//  TOD VIEW PUBLIC {{--START--}}
+
+// Fungsi untuk menampilkan game dan menyembunyikan tombol
+function showGameView() {
+    // Menyembunyikan tombol play
+    let playButton = document.getElementById('playButton');
+    playButton.style.display = 'none';
+
+    // Tampilkan tombol back
+    let backLink = document.getElementById('backLink');
+    backLink.style.display = 'inline';
+
+    let privateButton = document.getElementById('privateButton');
+    privateButton.style.display = 'inline';
+
+    // Menyembunyikan tombol about
+    let nav = document.querySelector('nav');
+    nav.style.display = 'none';
+
+    // Menampilkan game
+    let gameView = document.getElementById('game');
+    gameView.style.display = 'block';
+}
+//  TOD VIEW PUBLIC {{--END--}}
+
+// Fungsi untuk menampilkan konten 
+function showPage() {
+    let hash = window.location.hash; // Mendapatkan hash dari URL
+
+    // Tampilkan tombol "play" dan sembunyikan tombol "back"
+    let playButton = document.getElementById('playButton');
+    playButton.style.display = 'inline';
+    let backLink = document.getElementById('backLink');
+    backLink.style.display = 'none';
+
+    // Tampilkan tombol pada nav
+    let nav = document.querySelector('nav');
+    nav.style.display = 'block';
+
+    // Sembunyikan semua konten
+    let pages = document.querySelectorAll('#content > div');
+    pages.forEach(function(page) {
+        page.style.display = 'none';
+    });
+
+    // Menampilkan konten halaman yang sesuai berdasarkan hash
+    let targetPage = document.getElementById(hash.substr(1)); // Mengabaikan karakter '#' di depan hash
+    if (targetPage) {
+        targetPage.style.display = 'block';
+    } else if (hash === '#play') {
+        // Jika hash adalah '#play', tampilkan tampilan game
+        showGameView();
+    } else if (hash === '#private'){
+        showPrivateGameView();
+    }
+}
+
+// Fungsi untuk mengatur event saat tombol play ditekan
+function handlePlayButtonClick() {
+    window.location.hash = '#play'; // Ubah hash pada URL menjadi '#play'
+}
+
+// Fungsi untuk mengatur event saat tombol kembali ditekan
+function handleBackLinkClick() {
+    window.location.hash = '#'; // Ubah hash pada URL kembali menjadi '#'
+}
+
+// Memanggil fungsi showPage() setiap kali hash pada URL berubah
+window.addEventListener('hashchange', showPage);
+
+// Memanggil fungsi showPage() saat halaman pertama kali dimuat
+showPage();
+
+// POPUP HOMEPAGE {{--START--}}
+
+function openModal(page) {
+    let modal = document.getElementById('modal');
+    let modalContent = document.getElementById('modal-content');
+    let pageContent = document.getElementById(page);
+
+      modalContent.innerHTML = pageContent.innerHTML;
+      modal.style.display = 'block';
+  }
+
+  // Fungsi untuk menutup popUp
+  function closeModal() {
+    let modal = document.getElementById('modal');
+    modal.style.display = 'none';
+  }
+
+
+// POPUP HOMEPAGE {{--END--}}
+
+// TRUTH OR DARE PUBLIC {{--START--}}
+
 const truthText = document.querySelector("#truth");
 const dareText = document.querySelector("#dare");
 
@@ -78,7 +194,7 @@ function initCards() {
     let cards = document.querySelectorAll('.card');
     cards.forEach(function(card) {
         card.addEventListener('click', function() {
-            this.classList.toggle('flipped');
+                this.classList.toggle('flipped');
         });
     });
 }
@@ -116,3 +232,98 @@ function getRandomDare() {
   
   let buttonDare = document.getElementById("cardDare");
   buttonDare.addEventListener("click", getRandomDare); // Menambahkan event listener pada tombol untuk memanggil fungsi getRandomDare saat diklik
+
+// TRUTH OR DARE PUBLIC {{--END--}}
+
+
+
+// ADD TRUTH OR DARE POPUP {{--START--}}
+
+function openForm(page) {
+    let truthPopup = document.getElementById('truth-popup');
+    let truthPopupContent = document.getElementById('truth-popup-content');
+    let pageContent = document.getElementById(page);
+
+      truthPopupContent.innerHTML = pageContent.innerHTML;
+      truthPopup.style.display = 'block';
+  }
+
+  // Fungsi untuk menutup popUp
+  function closePopup() {
+    let truthPopup = document.getElementById('truth-popup');
+    truthPopup.style.display = 'none';
+  }
+
+  // Memanggil fungsi closeTruthPopup saat pengguna mengklik luar popUp
+  window.onclick = function(event) {
+    let truthPopup = document.getElementById('truth-popup');
+    if (event.target === truthPopup) {
+      closePopup();
+    }
+  }
+
+// ADD TRUTH OR DARE POPUP {{--END--}}
+
+// TRUTH OR DARE PRIVATE {{--START--}}
+
+// TRUTH PRIVATE
+const truthPrivate = document.querySelector("#truthPrivate");
+
+
+let dataAddTruth = [];
+
+function addDataTruth() {
+    const addTruth = document.getElementById("addTruth").value.trim();
+    if (addTruth == "" || !addTruth) {
+  	    alert("Silakan isi Truth terlebih dahulu")
+    }else
+        dataAddTruth.push(addTruth);
+        document.getElementById("addTruth").value = "";
+        closePopup();
+    }
+    let clickCountTruthPrivate = 0 ;
+    function getRandomTruthPrivate() {
+        clickCountTruthPrivate++; // Meningkatkan jumlah klik setiap kali tombol diklik
+        
+        if (clickCountTruthPrivate % 2 !== 0) { // Memeriksa apakah jumlah klik adalah bilangan ganjil
+            let randomIndexPrivate = Math.floor(Math.random() * dataAddTruth.length); // Mendapatkan index acak dari array
+            let randomTruthPrivate = dataAddTruth[randomIndexPrivate]; // Mendapatkan data acak dari array berdasarkan index
+            console.log(randomTruthPrivate);
+            truthPrivate.innerText = randomTruthPrivate;
+        }
+    }
+    let buttonTruthPrivate = document.getElementById("cardTruthPrivate");
+    buttonTruthPrivate.addEventListener("click", getRandomTruthPrivate); // Menambahkan event listener pada tombol untuk memanggil fungsi getRandomTruthPrivate saat diklik
+    
+
+// DARE PRIVATE
+const darePrivate = document.querySelector("#darePrivate");
+
+  let dataAddDare = [];
+
+  function addDataDare() {
+    const addDare = document.getElementById("addDare").value.trim();
+    if (addDare == "" || !addDare) {
+  	    alert("Silakan isi Dare terlebih dahulu")
+    }else
+        dataAddDare.push(addDare);
+        document.getElementById("addDare").value = "";
+        closePopup();
+  }
+  let clickCountDarePrivate = 0 ;
+  function getRandomDarePrivate() {
+    clickCountDarePrivate++; // Meningkatkan jumlah klik setiap kali tombol diklik
+    
+    if (clickCountDarePrivate % 2 !== 0) { // Memeriksa apakah jumlah klik adalah bilangan ganjil
+        let randomIndexPrivate = Math.floor(Math.random() * dataAddDare.length); // Mendapatkan index acak dari array
+        let randomDarePrivate = dataAddDare[randomIndexPrivate]; // Mendapatkan data acak dari array berdasarkan index
+        console.log(randomDarePrivate);
+        darePrivate.innerText = randomDarePrivate;
+    }
+  }
+
+  let buttonDarePrivate = document.getElementById("cardDarePrivate");
+  buttonDarePrivate.addEventListener("click", getRandomDarePrivate); // Menambahkan event listener pada tombol untuk memanggil fungsi getRandomDarePrivate saat diklik
+
+// TRUTH OR DARE PRIVATE {{--END--}}
+
